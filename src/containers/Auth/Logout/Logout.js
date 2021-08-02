@@ -7,6 +7,7 @@ import * as actions from "../../../store/actions/index";
 class Logout extends Component {
   componentDidMount() {
     this.props.onLogout();
+    console.log("asdas");
   }
 
   render() {
