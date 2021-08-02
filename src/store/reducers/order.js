@@ -1,5 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
-import { updatedObject } from "../utility";
+import { updateObject } from "../utility";
 
 const initialState = {
   orders: [],
@@ -8,20 +8,20 @@ const initialState = {
 };
 
 const purchaseInit = (state, action) => {
-  return updatedObject(state, { purchased: false });
+  return updateObject(state, { purchased: false });
 };
 
 const purchaseBurgerStart = (state, action) => {
-  return updatedObject(state, { loading: true });
+  return updateObject(state, { loading: true });
 };
 
 const purchaseBurgerSuccess = (state, action) => {
-  const newOrder = updatedObject(action.orderData, {
+  const newOrder = updateObject(action.orderData, {
     ...action.orderData,
     id: action.orderId,
   });
 
-  return updatedObject(state, {
+  return updateObject(state, {
     loading: false,
     purchased: true,
     orders: state.orders.concat(newOrder),
@@ -29,21 +29,21 @@ const purchaseBurgerSuccess = (state, action) => {
 };
 
 const purchaseBurgerFail = (state, action) => {
-  return updatedObject(state, { loading: false });
+  return updateObject(state, { loading: false });
 };
 
 const fetchOrdersStart = (state, action) => {
-  return updatedObject(state, { loading: true });
+  return updateObject(state, { loading: true });
 };
 const fetchOrdersSuccess = (state, action) => {
-  return updatedObject(state, {
+  return updateObject(state, {
     orders: action.orders,
     loading: false,
   });
 };
 
 const fetchOrdersFail = (state, action) => {
-  return updatedObject(state, { loading: false });
+  return updateObject(state, { loading: false });
 };
 
 const reducer = (state = initialState, action) => {
