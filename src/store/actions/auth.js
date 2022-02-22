@@ -48,10 +48,10 @@ export const auth = (email, password, isSignup) => {
       returnSecureToken: true,
     };
     let url =
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBpyRG8WWn90_zy5Au4IvCD2N9Te4len-c";
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDiss9FvnJxZHE69r4bMmhWWt9CzF6NBmo";
     if (!isSignup)
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBpyRG8WWn90_zy5Au4IvCD2N9Te4len-c";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDiss9FvnJxZHE69r4bMmhWWt9CzF6NBmo";
     axios
       .post(url, authData)
       .then((response) => {
